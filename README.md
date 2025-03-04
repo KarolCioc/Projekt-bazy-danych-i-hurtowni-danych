@@ -1,52 +1,60 @@
-# Projekt bazy danych i hurtowni danych
+# 📖 Projekt bazy danych i hurtowni danych
 
-## Opis problemu i założenia projektowe
+## 📝 Opis problemu i założenia projektowe
 
-Tematem projektu jest baza danych i hurtownia danych dla sieci salonów komórkowych. Poczatkowo opracowano schemat bazy danych, który następnie został przekształcony w hurtownię danych.
+Tematem projektu jest baza danych i hurtownia danych dla sieci salonów komórkowych. Początkowo opracowano schemat bazy danych, który następnie został przekształcony w hurtownię danych.
 
-### Kluczowe założenia:
+### 🔑 Kluczowe założenia:
 
-- Klient może posiadać wiele umów, a w każdej umowie może być wiele telefonów. Klient jest opisany poprzez: imię, nazwisko, numer telefonu oraz numer dowodu osobistego.
+- 🧑‍💻 Klient może posiadać wiele umów, a w każdej umowie może być wiele telefonów. Klient jest opisany poprzez: imię, nazwisko, numer telefonu oraz numer dowodu osobistego.
 
-- Pracownik może pracować tylko w jednym salonie i może posiadać tylko jedno stanowisko, które definiuje jego pensję.
+- 👨‍💼 Pracownik może pracować tylko w jednym salonie i może posiadać tylko jedno stanowisko, które definiuje jego pensję.
 
-- Telefony są opisane przez: markę, model oraz kolor.
+- 📱 Telefony są opisane przez: markę, model oraz kolor.
 
-- Salon posiada magazyn przechowujący określone telefony i ich ilość.
+- 🏢 Salon posiada magazyn przechowujący określone telefony i ich ilość.
 
-- Adresy klientów i salonów zawierają ulicę, miasto i województwo.
+- 📍 Adresy klientów i salonów zawierają ulicę, miasto i województwo.
 
-## Struktura bazy danych
+## 🗃️ Struktura bazy danych
 
-Kluczowe tabele:
+### Schemat ERD
 
-- Marka (Id_marka, Nazwa)
+![ERD](https://github.com/user-attachments/assets/043d2dca-5240-420b-a852-e8d37c52c8bf)
 
-- Model (Id_model, Nazwa, Marka_Id_marka)
+📌 Kluczowe tabele:
 
-- Kolor (Id_kolor, Nazwa)
+- 🏷️ Marka (Id_marka, Nazwa)
 
-- Telefony (Id_telefon, Kolor_Id_kolor, Model_Id_model)
+- 📌 Model (Id_model, Nazwa, Marka_Id_marka)
 
-- Magazyn (Id_magazyn, Ilosc, Telefony_Id_telefon, Salon_Id_salon)
+- 🎨 Kolor (Id_kolor, Nazwa)
 
-- Salon (Id_salon, Nazwa, Ulica_Id_ulica)
+- 📲 Telefony (Id_telefon, Kolor_Id_kolor, Model_Id_model)
 
-- Ulica (Id_ulica, Nazwa, Miasta_Id_miasta)
+- 📦 Magazyn (Id_magazyn, Ilosc, Telefony_Id_telefon, Salon_Id_salon)
 
-- Miasta (Id_miasta, Nazwa, Wojewodztwo_Id_wojewodztwa)
+- 🏬 Salon (Id_salon, Nazwa, Ulica_Id_ulica)
 
-- Wojewodztwo (Id_wojewodztwa, Nazwa)
+- 📍 Ulica (Id_ulica, Nazwa, Miasta_Id_miasta)
 
-- Klient (Id_klient, Imie, Nazwisko, Nr_telefonu, Nr_dowodu_osobistego, Ulica_Id_ulica)
+- 🌆 Miasta (Id_miasta, Nazwa, Wojewodztwo_Id_wojewodztwa)
 
-- Pracownicy (Id_pracownik, Imie, Nazwisko, Salon_Id_Salon, Stanowisko_Id_stanowisko)
+- 🗺️ Wojewodztwo (Id_wojewodztwa, Nazwa)
 
-- Stanowisko (Id_stanowiska, Nazwa, Pensja)
+- 🧑‍💻 Klient (Id_klient, Imie, Nazwisko, Nr_telefonu, Nr_dowodu_osobistego, Ulica_Id_ulica)
 
-# Transformacja bazy danych do hurtowni
+- 👨‍💼 Pracownicy (Id_pracownik, Imie, Nazwisko, Salon_Id_Salon, Stanowisko_Id_stanowisko)
+
+- 💼 Stanowisko (Id_stanowiska, Nazwa, Pensja)
+
+# 🔄 Transformacja bazy danych do hurtowni
 
 Hurtownia danych przechowuje informacje o zawieranych umowach w salonach komórkowych.
+
+### Schemat ERD
+
+![ERD](https://github.com/user-attachments/assets/250df05c-b58f-41b2-9c52-37b5d294f817)
 
 #### Główna tabela faktów:
 
@@ -78,7 +86,7 @@ Hurtownia danych przechowuje informacje o zawieranych umowach w salonach komórk
 
 - W_Magazyn
 
-## Proces ładowania danych
+## ⚙️ Proces ładowania danych
 
 Dane są przenoszone z bazy do hurtowni poprzez procedury:
 
@@ -97,13 +105,11 @@ EXECUTE Load_Kolor;
 ...
 EXECUTE Load_UMOWA;
 
-
-
-## Proces importu danych
+## 📥 Proces importu danych
 
 Dane do bazy zostały załadowane z plików .csv wygenerowanych w C++.
 
-### Kluczowe kroki:
+### 🔑 Kluczowe kroki:
 
 - Pliki .csv - zawierają dane.
 
@@ -111,12 +117,12 @@ Dane do bazy zostały załadowane z plików .csv wygenerowanych w C++.
 
 - Plik wsadowy .bat - automatyzuje proces importu.
 
-## Podsumowanie
+## ✅ Podsumowanie
 
 Projekt pozwolił na zdobycie praktycznej wiedzy o:
 
-- Projektowaniu baz danych i ich transformacji na hurtownie danych.
+- 📂 Projektowaniu baz danych i ich transformacji na hurtownie danych.
 
-- Optymalizacji zapytań SQL.
+- 🚀 Optymalizacji zapytań SQL.
 
-- Automatyzacji ładowania danych przy użyciu SQLLoadera.
+- 🔄 Automatyzacji ładowania danych przy użyciu SQLLoadera.
