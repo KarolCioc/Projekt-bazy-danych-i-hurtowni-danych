@@ -88,7 +88,7 @@ Hurtownia danych przechowuje informacje o zawieranych umowach w salonach komórk
 
 ## ⚙️ Proces ładowania danych
 
-Dane są przenoszone z bazy do hurtowni poprzez procedury:
+#### Dane są przenoszone z bazy do hurtowni poprzez procedury:
 
 CREATE OR REPLACE PROCEDURE Load_Magazyn AS  
 BEGIN
@@ -98,12 +98,13 @@ END;
 
 Podobne procedury istnieją dla pozostałych tabel.
 
-Wszystkie procedury są uruchamiane za pomocą:
+#### Wszystkie procedury są uruchamiane za pomocą:
 
 EXECUTE Load_Magazyn;
 EXECUTE Load_Kolor;
 ...
 EXECUTE Load_UMOWA;
+
 
 ## 📊 Porównanie wydajności bazy danych i hurtowni
 
