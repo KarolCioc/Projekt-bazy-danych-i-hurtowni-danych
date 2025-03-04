@@ -105,6 +105,21 @@ EXECUTE Load_Kolor;
 ...
 EXECUTE Load_UMOWA;
 
+## 📊 Porównanie wydajności bazy danych i hurtowni
+
+Szczegółowe przedstawienie zapytań oraz wyników zostało zawarte w pliku [211B_Cioć-Karol_Szemraj-Filip.pdf](./211B_Cioć-Karol_Szemraj-Filip.pdf).
+
+Wykonano zapytania:
+
+- 📈 ROLLUP - sumowanie danych po kategoriach
+
+- 📊 CUBE - analiza wielowymiarowa
+
+- 📌 Partycje obliczeniowe - segmentacja danych
+
+- 📉 Okna i rankingi - analiza trendów i porównania
+
+
 ## 📥 Proces importu danych
 
 Dane do bazy zostały załadowane z plików .csv wygenerowanych w C++.
